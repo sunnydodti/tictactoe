@@ -85,6 +85,7 @@ function resetGame() {
         tile.style.border = 'none';
         tile.style.borderRadius = '2px';
         tile.setAttribute('value', moves['blank']);
+        tile.innerHTML = ''; // Clear the X/O text from tiles
     }
 }
 function evaluateChoice(key) {
