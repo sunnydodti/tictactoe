@@ -74,11 +74,28 @@ function updateScoreBoard(win, turn) {
     var winnerScore = document.getElementById(winner);
     winnerScore.innerHTML = scoreBoard[winner];
 }
+function disableBoard() {
+    for (var i = 0; i < 9; i++) {
+        var tile = document.getElementById(i);
+        tile.style.opacity = '0.5';
+        tile.style.cursor = 'not-allowed';
+    }
+}
+
+function enableBoard() {
+    for (var i = 0; i < 9; i++) {
+        var tile = document.getElementById(i);
+        tile.style.opacity = '1';
+        tile.style.cursor = 'pointer';
+    }
+}
+
 function resetGame() {
     console.log('The game has been reset');
     board = [9, 9, 9, 9, 9, 9, 9, 9, 9];
     count = 0;
     gameActive = true;
+    enableBoard();
     var turnLabel = document.getElementById('turn');
     turnLabel.innerHTML = "Turn: X's";
     for (var i in board) {
@@ -100,6 +117,7 @@ function evaluateChoice(key) {
         }
         if (result) {
             gameActive = false; // Disable the board
+            disableBoard(); // Visual feedback
             updateScoreBoard(result, turn);
             console.log(moves[turn], ' Wins');
             // resetGame()
@@ -108,6 +126,7 @@ function evaluateChoice(key) {
         if (count === 9 && !result) {
             if (!result) {
                 gameActive = false; // Disable the board
+                disableBoard(); // Visual feedback
                 console.log('its a draw');
                 updateScoreBoard(result, turn);
             }
