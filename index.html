@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <title>Tic Tac Toe</title>
-    </head>
-    <body>
-        <center>
-            <main class="container-main">
-                <h1 class="title">Tic Tac Toe</h1>
 
-                <div class=container-small>
-                    <input class="tile" value=" " type="button" id="0" onclick="evaluateChoice(0)" />
-                    <input class="tile" value=" " type="button" id="1" onclick="evaluateChoice(1)" />
-                    <input class="tile" value=" " type="button" id="2" onclick="evaluateChoice(2)" />
-                </div>
-                <div class=container-small>
-                    <input class="tile" value=" " type="button" id="3" onclick="evaluateChoice(3)" />
-                    <input class="tile" value=" " type="button" id="4" onclick="evaluateChoice(4)" />
-                    <input class="tile" value=" " type="button" id="5" onclick="evaluateChoice(5)" />
-                </div>
-                <div class=container-small>
-                    <input class="tile" value=" " type="button" id="6" onclick="evaluateChoice(6)" />
-                    <input class="tile" value=" " type="button" id="7" onclick="evaluateChoice(7)" />
-                    <input class="tile" value=" " type="button" id="8" onclick="evaluateChoice(8)" />
-                </div>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Tic Tac Toe</title>
+</head>
 
-                <div id="game-info">
-                    <h3 id="turn">Turn: X's</h3>
-                </div>
+<body>
+    </div>
+    <center>
+        <main class="container-main">
+            <h1 class="title">Tic Tac Toe</h1>
+            <div class="board">
 
-                <div id="scoreboard">
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Score Baord</th>
-                        </tr>
-                        <tr>
-                            <th>X</th>
-                            <td id="X">0</td>
-                        </tr>
-                        <tr>
-                            <th>O</th>
-                            <td id="O">0</td>
-                        </tr>
-                        <tr>
-                            <th>Draw</th>
-                            <td id="draw-count">0</td>
-                        </tr>
-                    </table>
+                <div class=box-row>
+                    <div class="tile" value="" type="button" id="0" onclick="evaluateChoice(0)"></div>
+                    <div class="tile" value="" type="button" id="1" onclick="evaluateChoice(1)"></div>
+                    <div class="tile" value="" type="button" id="2" onclick="evaluateChoice(2)"></div>
                 </div>
-            </main>
-        </center>
-        <script src=script.js></script>
-    </body>
+                <div class=box-row>
+                    <div class="tile" value="" type="button" id="3" onclick="evaluateChoice(3)"></div>
+                    <div class="tile" value="" type="button" id="4" onclick="evaluateChoice(4)"></div>
+                    <div class="tile" value="" type="button" id="5" onclick="evaluateChoice(5)"></div>
+                </div>
+                <div class=box-row>
+                    <div class="tile" value="" type="button" id="6" onclick="evaluateChoice(6)"></div>
+                    <div class="tile" value="" type="button" id="7" onclick="evaluateChoice(7)"></div>
+                    <div class="tile" value="" type="button" id="8" onclick="evaluateChoice(8)"></div>
+                </div>
+            </div>
+
+            <div id="game-info">
+                <h3 id="turn">Turn: X's</h3>
+            </div>
+
+            <div id="scoreboard">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Score Baord</th>
+                    </tr>
+                    <tr>
+                        <th>X</th>
+                        <td id="X">0</td>
+                    </tr>
+                    <tr>
+                        <th>O</th>
+                        <td id="O">0</td>
+                    </tr>
+                    <tr>
+                        <th>Draw</th>
+                        <td id="draw-count">0</td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </center>
+    <script src=script.js></script>
+</body>
+
 </html>

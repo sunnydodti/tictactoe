@@ -20,6 +20,7 @@ function markChoice(key, turn) {
     turnLabel.innerHTML = "Turn: " + moves[tmp] + "'s";
     var currentTile = document.getElementById(key);
     currentTile.setAttribute('value', moves[turn]);
+    currentTile.innerHTML = moves[turn];
     console.log(count, ' : ', moves[turn], ' : ', key);
 }
 
