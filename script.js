@@ -1,6 +1,7 @@
 var board = [9, 9, 9, 9, 9, 9, 9, 9, 9];
 var turnS = [false, true];
 var count = 0;
+var gameActive = true;
 var scoreBoard = {
     X: 0,
     O: 0,
@@ -77,6 +78,7 @@ function resetGame() {
     console.log('The game has been reset');
     board = [9, 9, 9, 9, 9, 9, 9, 9, 9];
     count = 0;
+    gameActive = true;
     var turnLabel = document.getElementById('turn');
     turnLabel.innerHTML = "Turn: X's";
     for (var i in board) {
@@ -89,7 +91,7 @@ function resetGame() {
     }
 }
 function evaluateChoice(key) {
-    if (board[key] === 9) {
+    if (gameActive && board[key] === 9) {
         var turn = turnS[count % 2];
         markChoice(key, turn);
         var result = void 0;
@@ -97,6 +99,7 @@ function evaluateChoice(key) {
             result = evaluateGame(turn);
         }
         if (result) {
+            gameActive = false; // Disable the board
             updateScoreBoard(result, turn);
             console.log(moves[turn], ' Wins');
             // resetGame()
@@ -104,6 +107,7 @@ function evaluateChoice(key) {
         }
         if (count === 9 && !result) {
             if (!result) {
+                gameActive = false; // Disable the board
                 console.log('its a draw');
                 updateScoreBoard(result, turn);
             }
